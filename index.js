@@ -19,7 +19,7 @@ for (let i = 0; i < numberOfButtons; i++)
         else if (i === 5)
         {
             document.querySelectorAll(".drum")[i].style.color = "white";
-            audio  = new Audio("sounds/kick.mp3");
+            audio  = new Audio("sounds/kick-bass.mp3");
             audio.play();
         }
         else if (i === 6)
