@@ -6,31 +6,32 @@ for (let i = 0; i < numberOfButtons; i++)
         let audio;
         if (i === 0)
         {
-            document.querySelectorAll(".drum")[i].style.color = "white";
+            addAnimation(i);
             audio  = new Audio("sounds/crash.mp3");
             audio.play();
         }
         else if (i >= 1 && i <= 4)
         {
-            document.querySelectorAll(".drum")[i].style.color = "white";
+            addAnimation(i);
             audio  = new Audio("sounds/tom-" + i + ".mp3");
             audio.play();
         }
         else if (i === 5)
         {
-            document.querySelectorAll(".drum")[i].style.color = "white";
+            addAnimation(i);
             audio  = new Audio("sounds/kick-bass.mp3");
             audio.play();
         }
         else if (i === 6)
         {
-            document.querySelectorAll(".drum")[i].style.color = "white";
+            addAnimation(i);
             audio  = new Audio("sounds/snare.mp3");
             audio.play();
         }
 
 
     })
+
     
 }
 document.addEventListener("keydown", function (event){
@@ -73,4 +74,13 @@ document.addEventListener("keydown", function (event){
             break;
         default:
     }
+    addAnimationKey(event.key);
 })
+
+
+function addAnimationButton(index){
+    document.querySelectorAll(".drum")[index].classList.toggle("pressed");
+}
+function addAnimationKey(keyPressed){
+    document.querySelector('.' + keyPressed).classList.toggle("pressed");
+}
