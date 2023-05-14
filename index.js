@@ -6,25 +6,25 @@ for (let i = 0; i < numberOfButtons; i++)
         let audio;
         if (i === 0)
         {
-            addAnimation(i);
+            addAnimationButton(i);
             audio  = new Audio("sounds/crash.mp3");
             audio.play();
         }
         else if (i >= 1 && i <= 4)
         {
-            addAnimation(i);
+            addAnimationButton(i);
             audio  = new Audio("sounds/tom-" + i + ".mp3");
             audio.play();
         }
         else if (i === 5)
         {
-            addAnimation(i);
+            addAnimationButton(i);
             audio  = new Audio("sounds/kick-bass.mp3");
             audio.play();
         }
         else if (i === 6)
         {
-            addAnimation(i);
+            addAnimationButton(i);
             audio  = new Audio("sounds/snare.mp3");
             audio.play();
         }
@@ -79,8 +79,14 @@ document.addEventListener("keydown", function (event){
 
 
 function addAnimationButton(index){
-    document.querySelectorAll(".drum")[index].classList.toggle("pressed");
+    document.querySelectorAll(".drum")[index].classList.add("pressed");
+    setTimeout(function () {
+        document.querySelectorAll(".drum")[index].classList.remove("pressed");
+        },100);
 }
 function addAnimationKey(keyPressed){
-    document.querySelector('.' + keyPressed).classList.toggle("pressed");
+    document.querySelector('.' + keyPressed).classList.add("pressed");
+    setTimeout(function () {
+        document.querySelector('.' + keyPressed).classList.remove("pressed");
+        },100);
 }
